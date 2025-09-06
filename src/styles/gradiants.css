@@ -1,0 +1,112 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.75rem;
+    padding: 4vw 2vw;
+    background: radial-gradient(
+            1000px 600px at 10% 20%,
+            rgba(255, 78, 205, 0.3),
+            transparent
+        ),
+        radial-gradient(
+            1000px 600px at 90% 0%,
+            rgba(122, 60, 255, 0.35),
+            transparent
+        ),
+        linear-gradient(180deg, #1a1436 0%, #0f0b22 100%);
+    box-shadow: 0 2rem 5rem rgba(122, 60, 255, 0.25);
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.5px;
+}
+
+.hero p {
+    color: #d7d4e6;
+    max-width: 80%;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+.hero .glow {
+    position: absolute;
+    inset: auto;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    filter: blur(6vw);
+    opacity: 0.5;
+}
+
+.hero .glow.pink {
+    background: radial-gradient(circle, var(--pink), transparent);
+    top: -12vw;
+    left: -12vw;
+}
+
+.hero .glow.violet {
+    background: radial-gradient(circle, var(--violet), transparent);
+    bottom: -14vw;
+    right: -16vw;
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        padding: 5vw 3vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
+
+    .hero p {
+        max-width: 90%;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+    }
+
+    .hero .glow {
+        width: 40vw;
+        height: 40vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 6vw 4vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.5rem, 3.5vw, 2rem);
+    }
+
+    .hero p {
+        max-width: 100%;
+        font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    }
+
+    .hero .glow {
+        width: 30vw;
+        height: 30vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 8vw 5vw;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+    }
+
+    .hero p {
+        font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+    }
+
+    .hero .glow {
+        width: 25vw;
+        height: 25vw;
+    }
+}

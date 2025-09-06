@@ -1,0 +1,55 @@
+% Setting up the document class and geometry
+\documentclass[a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{noto}
+\usepackage{xcolor}
+
+% Defining colors for styling
+\definecolor{titleblue}{RGB}{0, 123, 255}
+\definecolor{headergray}{RGB}{100, 100, 100}
+
+% Setting default font
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+\pagestyle{empty}
+
+% Header with logo and title
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{https://res.cloudinary.com/your-cloudinary-id/image/upload/cache2k25/logo.png} % Replace with actual logo URL
+    \vspace{10pt}
+    \textbf{\Huge \color{titleblue} Cache2k25 Event Ticket}
+\end{center}
+
+\vspace{20pt}
+
+% Registration details
+\begin{center}
+    \Large \textbf{Registration ID:} YourRegistrationId \\
+    \vspace{10pt}
+    \large \textbf{Event:} YourEventName \\
+    \vspace{10pt}
+\end{center}
+
+% Participants section
+\section*{Participants}
+\textbf{Primary Participant:} YourName \\
+\ifx\YourGameId\empty\else\textbf{Game ID:} YourGameId \\\fi
+\ifx\YourTeamMembers\empty\else
+\vspace{10pt}
+\textbf{Team Members:}
+\begin{itemize}
+    YourTeamMembers
+\end{itemize}
+\fi
+
+\vspace{20pt}
+
+% Footer
+\begin{center}
+    \small \color{headergray} Please present this ticket at the Cache2k25 help desk on the event day.
+\end{center}
+
+\end{document}

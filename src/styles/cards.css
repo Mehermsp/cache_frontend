@@ -1,0 +1,85 @@
+.card {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.02)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 1.5vw;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 2rem 4rem rgba(122, 60, 255, 0.3);
+}
+
+.card .image {
+    height: 10rem;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card .title {
+    font-weight: 800;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    margin: 0.75rem 0 0.25rem;
+}
+
+.card .desc {
+    color: #cbc7db;
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    min-height: 2.625rem;
+}
+
+.card .row {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    justify-content: space-between;
+}
+
+.price {
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--pink), var(--violet));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@media (max-width: 1024px) {
+    .card {
+        padding: 2vw;
+    }
+
+    .card .image {
+        height: 8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card .image {
+        height: 7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 3vw;
+    }
+
+    .card .image {
+        height: 6rem;
+    }
+}
