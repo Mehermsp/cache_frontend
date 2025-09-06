@@ -383,11 +383,13 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
                             style={{ display: "flex", gap: 12, marginTop: 14 }}
                         >
                             <button
-                                disabled={submitting}
+                                disabled={submitting || success}
                                 className="btn"
                                 type="submit"
                             >
-                                {submitting
+                                {success
+                                    ? "Submitted Successfully"
+                                    : submitting
                                     ? "Submitting..."
                                     : "Submit Registration"}
                             </button>
