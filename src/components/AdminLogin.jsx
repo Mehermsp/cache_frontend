@@ -10,7 +10,7 @@ const AdminLogin = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "http://localhost:5000/api/admin/login",
+                "https://cache2k25-backend.onrender.com/api/admin/login",
                 { email, password }
             );
             localStorage.setItem("adminToken", data.token);
