@@ -2,9 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
-  background: #000; /* black */
+  padding: 14px 28px;
+  background: #111;
   color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -14,9 +18,9 @@
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 20px;
-  list-style: none;
 }
 
 .nav-btn {
@@ -32,29 +36,9 @@
   color: #ffcc00;
 }
 
-/* Mobile */
-.hamburger {
-  display: none;
-  font-size: 22px;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
+/* Mobile menu */
 @media (max-width: 768px) {
-  .hamburger { display: block; }
-
   .nav-links {
     display: none;
-    position: absolute;
-    top: 60px;
-    right: 10px;
-    flex-direction: column;
-    background: #111;
-    padding: 12px;
-    border-radius: 8px;
   }
-
-  .nav-links.open { display: flex; }
 }
