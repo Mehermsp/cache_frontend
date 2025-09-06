@@ -1,17 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 
 export default function Navbar({ onNavigate }) {
+    const [open, setOpen] = useState(false);
+
     return (
         <nav className="navbar">
-            <div
-                className="logo"
-                onClick={() => onNavigate("home")}
-                style={{ cursor: "pointer" }}
-            >
+            <div className="logo" onClick={() => onNavigate("home")}>
                 CACHE2K25
             </div>
-            <ul className="nav-links">
+
+            <button className="hamburger" onClick={() => setOpen(!open)}>
+                ☰
+            </button>
+
+            <ul className={`nav-links ${open ? "open" : ""}`}>
                 <li>
                     <button
                         onClick={() => onNavigate("home")}
