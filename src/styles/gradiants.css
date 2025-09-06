@@ -3,18 +3,9 @@
     overflow: hidden;
     border-radius: 1.75rem;
     padding: 4vw 2vw;
-    background: radial-gradient(
-            1000px 600px at 10% 20%,
-            rgba(255, 78, 205, 0.3),
-            transparent
-        ),
-        radial-gradient(
-            1000px 600px at 90% 0%,
-            rgba(122, 60, 255, 0.35),
-            transparent
-        ),
-        linear-gradient(180deg, #1a1436 0%, #0f0b22 100%);
-    box-shadow: 0 2rem 5rem rgba(122, 60, 255, 0.25);
+    background: #ffffff; /* White background */
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    border: 1px solid #333333; /* Dark gray border */
 }
 
 .hero h1 {
@@ -22,10 +13,11 @@
     line-height: 1.05;
     margin: 0 0 0.75rem;
     letter-spacing: -0.5px;
+    color: #000000; /* Black text */
 }
 
 .hero p {
-    color: #d7d4e6;
+    color: #333333; /* Dark gray text */
     max-width: 80%;
     font-size: clamp(1rem, 2vw, 1.125rem);
 }
@@ -41,13 +33,13 @@
 }
 
 .hero .glow.pink {
-    background: radial-gradient(circle, var(--pink), transparent);
+    background: radial-gradient(circle, #666666, transparent); /* Light gray */
     top: -12vw;
     left: -12vw;
 }
 
 .hero .glow.violet {
-    background: radial-gradient(circle, var(--violet), transparent);
+    background: radial-gradient(circle, #333333, transparent); /* Dark gray */
     bottom: -14vw;
     right: -16vw;
 }
