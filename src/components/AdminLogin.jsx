@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import API_BASE from './app.js'
 
 const AdminLogin = () => {
     const [email, setEmail] = useState("");
