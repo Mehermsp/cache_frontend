@@ -1,10 +1,9 @@
 :root {
-    --pink: #ff4ecd;
-    --violet: #7a3cff;
-    --bg: #0d0b1a;
-    --card: #140f2a;
-    --muted: #a7a3b5;
-    --light: #ffffff;
+    --black: #000000; /* Pure black */
+    --white: #ffffff; /* Pure white */
+    --gray-dark: #333333; /* Dark gray */
+    --gray-light: #666666; /* Light gray */
+    --shadow: rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
 * {
@@ -20,13 +19,17 @@ body,
 body {
     margin: 0;
     font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial;
-    background: #fff;
-    color: #000;
+    background: var(--white); /* White background */
+    color: var(--black); /* Black text */
 }
 
 a {
-    color: inherit;
+    color: var(--black); /* Black links */
     text-decoration: none;
+}
+
+a:hover {
+    color: var(--gray-dark); /* Dark gray on hover */
 }
 
 .container {
@@ -36,23 +39,23 @@ a {
 }
 
 .btn {
-    background: linear-gradient(135deg, var(--pink), var(--violet));
-    color: white;
+    background: var(--black); /* Black button background */
+    color: var(--white); /* White button text */
     border: none;
     padding: 1.2rem 2rem;
     border-radius: 14px;
     font-weight: 700;
     letter-spacing: 0.3px;
     cursor: pointer;
-    box-shadow: 0 12px 30px rgba(122, 60, 255, 0.35);
+    box-shadow: 0 12px 30px var(--shadow); /* Subtle shadow */
     transform: translateY(0);
     transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    filter: brightness(1.05);
-    box-shadow: 0 16px 40px rgba(122, 60, 255, 0.45);
+    filter: brightness(0.9); /* Slightly darker on hover */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4); /* Darker shadow */
 }
 
 .input,
@@ -60,9 +63,9 @@ select {
     width: 100%;
     padding: 1rem 1.2rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
-    color: var(--light);
+    border: 1px solid var(--gray-dark); /* Dark gray border */
+    background: rgba(0, 0, 0, 0.05); /* Light gray background */
+    color: var(--black); /* Black text */
 }
 
 .input[type="file"] {
@@ -73,14 +76,14 @@ select {
 .label {
     display: block;
     margin: 1rem 0 0.5rem;
-    color: #d7d4e6;
+    color: var(--black); /* Black text */
     font-weight: 600;
 }
 
 .label-events {
-    background-color: #1e1e2e;
-    color: #ffffff;
-    border: 1px solid #444;
+    background-color: var(--white); /* White background */
+    color: var(--black); /* Black text */
+    border: 1px solid var(--gray-dark); /* Dark gray border */
     padding: 0.8rem 1rem;
     border-radius: 8px;
     font-size: 0.875rem;
@@ -89,8 +92,8 @@ select {
 }
 
 .label-events option {
-    background-color: #1e1e2e;
-    color: #ffffff;
+    background-color: var(--white);
+    color: var(--black);
 }
 
 .grid {
@@ -110,12 +113,13 @@ select {
     font-size: clamp(0.625rem, 1.5vw, 0.75rem);
     padding: 0.375rem 0.625rem;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--black); /* Black background */
+    color: var(--white); /* White text */
 }
 
 .small {
     font-size: clamp(0.625rem, 1.5vw, 0.75rem);
-    color: var(--muted);
+    color: var(--gray-dark); /* Dark gray text */
 }
 
 hr {
@@ -124,7 +128,7 @@ hr {
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.15),
+        var(--gray-dark), /* Dark gray line */
         transparent
     );
     margin: 1.5rem 0;
