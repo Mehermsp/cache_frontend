@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_BASE from './app.js'
 
 const AdminLogin = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-
+const API_BASE = "https://cache2k25-backend.onrender.com";
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "https://cache2k25-backend.onrender.com/api/admin/login",
+                `${API_BASE}/api/admin/login`,
                 { email, password }
             );
             localStorage.setItem("adminToken", data.token);
