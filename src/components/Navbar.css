@@ -2,13 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #9d50bb, #6e48aa); /* violet–pink gradient */
+  padding: 12px 20px;
+  background: #000; /* black */
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
 }
 
 .logo {
@@ -18,41 +14,47 @@
 }
 
 .nav-links {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.nav-links li a:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffd166;
-}
-.nav-links {
-  list-style: none;
   display: flex;
   gap: 20px;
+  list-style: none;
 }
 
 .nav-btn {
   background: none;
   border: none;
-  color: white; /* adjust to your theme */
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .nav-btn:hover {
-  color: #ffcc00; /* hover highlight */
+  color: #ffcc00;
+}
+
+/* Mobile */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    flex-direction: column;
+    background: #111;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .nav-links.open { display: flex; }
 }
