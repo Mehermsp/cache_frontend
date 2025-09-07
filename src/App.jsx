@@ -37,9 +37,10 @@ function App() {
             "VSM College of Engineering was established in 2009 by the Ramachandrapuram Educational Society. It is affiliated with JNTU – Kakinada and is one of the leading institutions in the region. The college was started to meet the changing needs of society, industry, and services, especially with the growing focus on innovation, research, and new teaching methods. Even with tough competition due to globalization, the institution is working hard to prepare graduates who meet global standards. The college aims to become a leader in technical and management education in Konaseema district and across the state, building a strong reputation for quality education and skilled professionals.",
         established: "2009",
         students: "5000+",
-        faculty:"300+",
+        faculty: "300+",
         librarybooks: "27000+",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/IIT_Bombay_Main_Building.jpg/640px-IIT_Bombay_Main_Building.jpg",
+        image1: "https://content.jdmagicbox.com/v2/comp/east_godavari/g5/9999px883.x883.220613012313.s5g5/catalogue/v-s-m-degree-and-p-g-colleges-ramachandrapuram-east-godavari-colleges-popi7edqyk.jpg",
+        image2: "https://content.jdmagicbox.com/comp/east-godavari/g1/9999px883.x883.120418141533.y8g1/catalogue/vsm-college-of-engineering-ramachandrapuram-east-godavari-computer-engineering-colleges-5qjywrhkjd.jpg",
     };
 
     return (
@@ -61,13 +62,20 @@ function App() {
                             onRegister={() => setRoute("register")}
                             onViewEvents={() => setRoute("events")}
                         />
-                        <button className="btn" style={{ marginTop: 32 }} onClick={() => setPage("events")}>Explore Events</button>
+                        <button
+                            className="btn"
+                            style={{ marginTop: 10 }}
+                            onClick={() => setPage("events")}
+                        >
+                            Explore Events
+                        </button><hr />
+                        <h2 style={{ marginTop: 20,width:"100%",textAlign:"center" }}>ABOUT THE COLLEGE</h2>
                         <CollegeInfo college={college} />
                     </>
                 )}
                 {page === "events" && (
                     <>
-                        <h2 style={{ marginTop: 32 }}>Explore Events</h2>
+                        <h2 style={{ marginTop: 10 }}>Explore Events</h2>
                         <EventsGrid
                             onSelect={(event) => {
                                 setSelectedEvent(event);
