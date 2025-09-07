@@ -11,13 +11,17 @@ export default function PaymentWidget({ name, amount, note }){
     const pn = import.meta.env.VITE_UPI_NAME || "CACHE2K25";
     const tn = encodeURIComponent(note || `CACHE2K25 ${name}`);
     const am = amount?.toFixed ? amount.toFixed(2) : amount;
-    const url = useMemo(
-        () =>
-            `upi://pay?pa=${pa}&pn=${encodeURIComponent(
-                pn
-            )}&am=${am}&cu=INR&tn=${tn}`,
-        [pa, pn, am, tn]
-    );
+    const url = useMemo(() => {
+  const params = new URLSearchParams({
+    pa,
+    pn,
+    am,
+    cu: "INR",
+    tn,
+  });
+  return `upi://pay?${params.toString()}`;
+}, [pa, pn, am, tn]);
+
     useEffect(() => {
         QRCode.toDataURL(url).then(setQr);
     }, [url]);
