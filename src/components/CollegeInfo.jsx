@@ -5,8 +5,13 @@ export default function CollegeInfo({ college }) {
     return (
         <div className="college-card">
             {/* College Image */}
-            <div className="college-image">
-                <img src={college.image} alt={college.name} />
+            <div className="college-images">
+                <div className="college-image">
+                    <img src={college.image1} alt={college.name} />
+                </div>
+                <div className="college-image">
+                    <img src={college.image2} alt={college.name} />
+                </div>
             </div>
 
             {/* College Info */}
