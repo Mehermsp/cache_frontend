@@ -25,7 +25,7 @@ export default function Navbar({ onNavigate }) {
                 </li>
                 <li>
                     <button
-                        onClick={() => onNavigate("home")}
+                        onClick={() => onNavigate("events")}
                         className="nav-btn"
                     >
                         Events
