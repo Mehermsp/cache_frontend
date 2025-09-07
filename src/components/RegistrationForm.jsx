@@ -78,6 +78,15 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
 
     async function onSubmit(e) {
         e.preventDefault();
+
+        // Validation: Check team members if event requires them
+        if (ev.teamSize > 1 && form.teamMembers.length < ev.teamSize - 1) {
+            alert(
+                `This event requires ${ev.teamSize} members in total. Please add all team members.`
+            );
+            return;
+        }
+
         setSubmitting(true);
 
         try {
@@ -93,9 +102,11 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
             formData.append("paymentProof", imageFile);
             formData.append("utr", form.utr);
             formData.append("paymentPhone", form.paymentPhone);
+
             if (ev.requiresGameIds) {
                 formData.append("gameId", form.gameId);
             }
+
             formData.append("teamMembers", JSON.stringify(form.teamMembers));
 
             const { data } = await api.post("/registrations", formData, {
@@ -109,6 +120,7 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
             setSubmitting(false);
         }
     }
+
 
     return (
         <div className="grid grid-2" style={{ marginTop: 20 }}>
@@ -393,6 +405,7 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
                                     ? "Submitting..."
                                     : "Submit Registration"}
                             </button>
+
                             <button
                                 type="button"
                                 className="btn"
@@ -461,7 +474,7 @@ export default function RegistrationForm({ selectedEvent, onCancel }) {
                             Registration ID: {success.registrationId}
                         </div>
                         <div className="small">
-                            We’ve emailed a copy. Show this at the help desk on
+                            We will email a copy. Show this at the help desk on
                             event day.
                         </div>
                     </div>
