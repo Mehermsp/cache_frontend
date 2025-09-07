@@ -2,13 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 28px;
-  background: #111;
+  padding: 12px 20px;
+  background: #000; /* black */
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative; 
 }
 
 .logo {
@@ -18,9 +15,9 @@
 }
 
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 20px;
+  list-style: none;
 }
 
 .nav-btn {
@@ -36,9 +33,52 @@
   color: #ffcc00;
 }
 
-/* Mobile menu */
+/* Mobile */
+.hamburger {
+  display: none;
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
-  .nav-links {
+  .hamburger {
+    display: block;
+  }
+
+.nav-links {
     display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    flex-direction: column;
+    background: #111;         /* solid dark background */
+    padding: 12px;
+    border-radius: 8px;
+    width: 180px;
+    z-index: 1000;            /* make sure it stays on top */
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-btn {
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;              /* force white text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .nav-btn:hover {
+    background: #222;         /* highlight on hover */
+    color: #ffcc00;
   }
 }
