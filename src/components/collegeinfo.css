@@ -15,6 +15,7 @@
 /* Image section */
 .college-image img {
   width: 100%;
+  max-width: 300px;
   max-height: 250px;
   object-fit: cover;
   border-radius: 12px;
@@ -25,7 +26,10 @@
   margin: 0 0 10px;
   font-size: 1.8rem;
 }
-
+.college-images{
+  display: flex;
+  flex-direction: column;
+}
 .college-details .location {
   font-weight: bold;
   margin-bottom: 8px;
