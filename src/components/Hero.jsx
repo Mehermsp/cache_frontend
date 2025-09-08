@@ -8,11 +8,11 @@ export default function Hero({ onRegister, onViewEvents }) {
             <h1>
                 Welcome to{" "}
                 <span
-                    style={{
+                     style={{
                         background:
                             "linear-gradient(135deg,var(--pink),var(--violet))",
                         WebkitBackgroundClip: "text",
-                        color: "transparent",
+                        color: "black",
                     }}
                 >
                     CACHE2K25
